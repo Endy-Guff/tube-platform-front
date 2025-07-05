@@ -1,31 +1,31 @@
 {
-	"name": "front",
-	"version": "0.1.0",
-	"private": true,
-	"scripts": {
-		"dev": "next dev --turbopack",
-		"build": "next build",
-		"start": "next start",
-		"lint": "next lint --fix",
-		"format": "prettier --write .",
-		"lint:check": "next lint && prettier --check .",
-		"lint:fix": "yarn lint && yarn format"
-	},
-	"dependencies": {
-		"next": "15.3.5",
-		"react": "^19.0.0",
-		"react-dom": "^19.0.0",
-		"sass": "^1.89.2"
-	},
-	"devDependencies": {
-		"@eslint/eslintrc": "^3",
-		"@trivago/prettier-plugin-sort-imports": "^5.2.2",
-		"@types/node": "^20",
-		"@types/react": "^19",
-		"@types/react-dom": "^19",
-		"eslint": "^9",
-		"eslint-config-next": "15.3.5",
-		"prettier": "^3.6.2",
-		"typescript": "^5"
-	}
+  "name": "front",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint --fix",
+    "format": "prettier --write .",
+    "lint:check": "next lint && prettier --check .",
+    "lint:fix": "yarn lint && yarn format"
+  },
+  "dependencies": {
+    "next": "15.3.5",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sass": "^1.89.2"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.5",
+    "prettier": "^3.6.2",
+    "typescript": "^5"
+  }
 }
