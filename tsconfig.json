@@ -25,8 +25,9 @@
       "@providers/*": ["providers/*"],
       "@server/*": ["server/*"],
       "@services/*": ["services/*"],
+      "@services": ["services"],
       "@components/*": ["components/*"],
-      "@components": ["components/index"],
+      "@components": ["components"],
       "@common/*": ["common/*"],
       "@styles/*": ["styles/*"],
       "@/*": ["./*"]

@@ -8,7 +8,10 @@ export const PUBLIC_ROUTES = {
   LIKED_VIDEOS: '/liked-videos',
   SETTINGS: '/settings',
   FEEDBACK: '/feedback',
-  SEARCH: '/search'
+  SEARCH: '/search',
+
+  VIDEO: (path: string) => `/v/${path}`,
+  CHANNEL: (path: string) => `/c/${path}`
 
   // // Динамические пути
   // PRODUCT: ({ id }: Required<Pick<RouteParams, 'id'>>) => `/products/${id}`,
