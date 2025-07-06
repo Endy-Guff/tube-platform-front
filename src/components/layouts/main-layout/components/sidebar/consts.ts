@@ -1,4 +1,3 @@
-import { COLORS } from '@common/consts'
 import { PUBLIC_ROUTES } from '@config'
 import {
   CircleAlert,
@@ -21,7 +20,7 @@ export const SIDEBAR_MENU: ISidebarMenuGroup[] = [
       {
         label: 'Explore',
         link: PUBLIC_ROUTES.EXPLORE,
-        icon: { icon: Compass, color: COLORS.primary }
+        icon: { icon: Compass }
       },
       {
         label: 'Trending',

@@ -18,3 +18,8 @@ export interface ISidebarMenuGroup {
   isBorderBottom?: boolean
   title?: string
 }
+
+export interface ISidebarMenuItemProps extends ISidebarMenuItem {
+  isActive: boolean
+  isOpen: boolean
+}

@@ -1,17 +1,23 @@
+import cn from 'clsx'
 import Link from 'next/link'
 import { FC } from 'react'
 
 import {
-  ISidebarMenuItem,
+  ISidebarMenuItemProps,
   getIconOrImage
 } from '@/components/layouts/main-layout/components/sidebar'
 
-export const SidebarMenuItem: FC<ISidebarMenuItem> = props => {
-  const { label, link } = props
+import styles from './styles.module.scss'
+
+export const SidebarMenuItem: FC<ISidebarMenuItemProps> = props => {
+  const { label, link, isActive } = props
 
   return (
-    <li>
-      <Link href={link}>
+    <li className={styles.item}>
+      <Link
+        className={cn(styles.link, { [styles.active]: isActive })}
+        href={link}
+      >
         {getIconOrImage(props)}
         <span>{label}</span>
       </Link>

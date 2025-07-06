@@ -5,3 +5,15 @@
   padding: 0;
   margin: 0;
 }
+
+body {
+  background: var(--color-bg);
+  height: 100vh;
+  color: var(--color-white);
+  font-family: var(--font-suse-sans);
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-white);
+}

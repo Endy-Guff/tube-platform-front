@@ -2,14 +2,14 @@ import { FC, PropsWithChildren } from 'react'
 
 import { Header, Sidebar } from './components'
 
-export const MainLayout: FC<PropsWithChildren> = ({ children }) => {
-  return (
-    <main>
-      <Sidebar />
-      <div>
-        <Header />
-        <section>{children}</section>
-      </div>
-    </main>
-  )
-}
+import styles from './styles.module.scss'
+
+export const MainLayout: FC<PropsWithChildren> = ({ children }) => (
+  <main className={styles.main}>
+    <Sidebar />
+    <div className={styles['content_wrapper']}>
+      <Header />
+      <section className={styles.content}>{children}</section>
+    </div>
+  </main>
+)

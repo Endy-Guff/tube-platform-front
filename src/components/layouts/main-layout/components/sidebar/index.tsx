@@ -1,26 +1,47 @@
+'use client'
+
+import { useToggle } from '@common/hooks'
+import cn from 'clsx'
+import { usePathname } from 'next/navigation'
+
 import { SidebarHeader, SidebarMenu, SidebarMenuItem, SidebarSubscriptionItem } from './components'
 import { SIDEBAR_MENU, SIDEBAR_MENU_MORE } from './consts'
+
+import styles from './styles.module.scss'
 
 export * from './consts'
 export * from './types'
 export * from './helper'
 
 export const Sidebar = () => {
+  const pathname = usePathname()
+  const [isOpen, toggleOpen] = useToggle(true)
+
   return (
-    <aside>
-      <SidebarHeader />
-      <SidebarMenu
-        menu={SIDEBAR_MENU}
-        component={SidebarMenuItem}
-      />
-      <SidebarMenu
-        menu={[]}
-        component={SidebarSubscriptionItem}
-      />
-      <SidebarMenu
-        menu={SIDEBAR_MENU_MORE}
-        component={SidebarMenuItem}
-      />
+    <aside className={cn(styles.sidebar, { [styles.open]: isOpen })}>
+      <SidebarHeader toggleOpen={toggleOpen} />
+      <div className={styles.menu}>
+        <SidebarMenu
+          menu={SIDEBAR_MENU}
+          component={SidebarMenuItem}
+          isOpen={isOpen}
+          pathname={pathname}
+        />
+        {false && (
+          <SidebarMenu
+            menu={[]}
+            component={SidebarSubscriptionItem}
+            isOpen={isOpen}
+            pathname={pathname}
+          />
+        )}
+        <SidebarMenu
+          menu={SIDEBAR_MENU_MORE}
+          component={SidebarMenuItem}
+          isOpen={isOpen}
+          pathname={pathname}
+        />
+      </div>
     </aside>
   )
 }

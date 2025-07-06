@@ -1,0 +1,12 @@
+.main {
+  display: flex;
+  height: 100%;
+}
+
+.content_wrapper {
+  flex: 1 1 auto;
+}
+
+.content {
+  padding: var(--padding-layout);
+}

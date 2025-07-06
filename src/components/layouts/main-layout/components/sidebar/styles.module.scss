@@ -1,0 +1,39 @@
+.sidebar {
+  width: var(--sidebar-width);
+  padding: var(--padding-layout);
+  border-right: 1px solid var(--color-border);
+  overflow: hidden;
+  white-space: nowrap;
+
+  &.open {
+    animation: showSidebar 0.3s ease-in-out forwards;
+  }
+
+  animation: hideSidebar 0.3s ease-in-out forwards;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@keyframes hideSidebar {
+  0% {
+    width: var(--sidebar-width);
+  }
+
+  100% {
+    width: 4.5rem;
+  }
+}
+
+@keyframes showSidebar {
+  0% {
+    width: 4.5rem;
+  }
+
+  100% {
+    width: var(--sidebar-width);
+  }
+}

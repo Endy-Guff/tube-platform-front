@@ -3,22 +3,24 @@ import Link from 'next/link'
 import { FC } from 'react'
 
 import {
-  ISidebarMenuItem,
+  ISidebarMenuItemProps,
   getIconOrImage
 } from '@/components/layouts/main-layout/components/sidebar'
 
-export const SidebarSubscriptionItem: FC<ISidebarMenuItem> = props => {
-  const { label, link, isLiveNow, isRecentUpload } = props
+export const SidebarSubscriptionItem: FC<ISidebarMenuItemProps> = props => {
+  const { label, link, isLiveNow, isRecentUpload, isOpen } = props
 
   return (
     <li>
       <Link href={link}>
         {getIconOrImage(props)}
-        <span>
-          <span>{label}</span>
-          {isLiveNow && <Radio />}
-          {isRecentUpload && <Dot />}
-        </span>
+        {isOpen && (
+          <span>
+            <span>{label}</span>
+            {isLiveNow && <Radio />}
+            {isRecentUpload && <Dot />}
+          </span>
+        )}
       </Link>
     </li>
   )

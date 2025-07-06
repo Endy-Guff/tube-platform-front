@@ -3,7 +3,13 @@ import Image from 'next/image'
 import { ISidebarMenuItem } from './types'
 
 export const getIconOrImage = ({ icon, label }: ISidebarMenuItem) => {
-  if (icon && typeof icon !== 'string') return <icon.icon color={icon.color} />
+  if (icon && typeof icon !== 'string')
+    return (
+      <icon.icon
+        color={icon.color}
+        style={{ minWidth: '1.5rem' }}
+      />
+    )
   if (icon)
     return (
       <Image

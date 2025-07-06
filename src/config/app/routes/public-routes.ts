@@ -1,5 +1,5 @@
 export const PUBLIC_ROUTES = {
-  EXPLORE: '/explore',
+  EXPLORE: '/',
   TRENDING: '/trending',
   VIDEO_GAMES: '/video-games',
   MY_CHANNEL: '/my-channel',

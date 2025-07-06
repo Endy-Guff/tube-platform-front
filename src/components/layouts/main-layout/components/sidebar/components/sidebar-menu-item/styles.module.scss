@@ -1,0 +1,26 @@
+@mixin active {
+  transform: rotate(6deg);
+  color: var(--color-primary);
+}
+
+.item {
+  list-style-type: none;
+}
+
+.link {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+
+  svg {
+    transition: all 0.3s ease-in-out;
+  }
+
+  &.active svg {
+    @include active;
+  }
+
+  &:hover svg {
+    @include active;
+  }
+}

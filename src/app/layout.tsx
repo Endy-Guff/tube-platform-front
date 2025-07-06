@@ -5,7 +5,7 @@ import { SUSE } from 'next/font/google'
 import './globals.scss'
 
 const suse = SUSE({
-  variable: '--font-geist-sans',
+  variable: '--font-suse-sans',
   subsets: ['latin']
 })
 
