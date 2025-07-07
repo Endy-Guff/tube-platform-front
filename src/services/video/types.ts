@@ -1,4 +1,8 @@
-import { IChannel } from './channel'
+import { IChannel } from '../channel'
+
+export enum EVideoCategory {
+  EXPLORE = 'explore'
+}
 
 export interface IVideo {
   id: string

@@ -1,4 +1,5 @@
 import { MainLayout } from '@components'
+import { Providers } from '@providers/Providers'
 import type { Metadata } from 'next'
 import { SUSE } from 'next/font/google'
 
@@ -22,7 +23,9 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${suse.variable}`}>
-        <MainLayout>{children}</MainLayout>
+        <Providers>
+          <MainLayout>{children}</MainLayout>
+        </Providers>
       </body>
     </html>
   )

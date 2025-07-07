@@ -4,16 +4,16 @@ export const THOUSAND = 1_000
 
 const NUMBER_VARIANTS = [BILLION, MILLION, THOUSAND]
 
-const SUFFIXES = {
-  [BILLION]: 'B',
-  [MILLION]: 'M',
-  [THOUSAND]: 'K'
-}
+const SUFFIXES = new Map([
+  [BILLION, 'B'],
+  [MILLION, 'M'],
+  [THOUSAND, 'K']
+])
 
 const getSuffix = (value: number): string => {
-  Object.entries(SUFFIXES).forEach(([key, suffix]) => {
-    if (value >= Number(key)) return suffix
-  })
+  for (const [key, suffix] of SUFFIXES) {
+    if (value >= key) return suffix
+  }
 
   return ''
 }
@@ -24,7 +24,7 @@ export const getFormatViews = (views: number): string => {
   for (const variant of NUMBER_VARIANTS) {
     if (views >= variant) {
       const fixedValue = (views / variant).toFixed(1)
-      return `${removeZero(fixedValue)}${getSuffix(variant)} views`
+      return `${removeZero(fixedValue)}${getSuffix(views)} views`
     }
   }
 

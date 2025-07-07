@@ -1,4 +1,4 @@
-import { IVideo } from './video'
+import { IVideo } from '../video'
 
 export interface IChannel {
   id: string

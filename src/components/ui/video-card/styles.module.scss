@@ -1,0 +1,53 @@
+.card {
+  width: 250px;
+}
+
+.preview {
+  position: relative;
+  margin-bottom: 0.1rem;
+}
+
+.preview-img {
+  border-radius: 4px;
+}
+
+.channel-link {
+  position: absolute;
+  bottom: 4px;
+  left: 4px;
+
+  &>.channel-img {
+    border-radius: 50%;
+  }
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: .5rem;
+
+  &>.date {
+    opacity: .45;
+    font-size: .65rem;
+  }
+
+  &>.views {
+    display: flex;
+    align-items: center;
+
+    &>.views-count {
+      opacity: .45;
+      font-size: .65rem;
+    }
+  }
+}
+
+.channel {
+  opacity: .45;
+  font-size: .65rem;
+}
+
+.title {
+  margin-bottom: .1rem;
+}
