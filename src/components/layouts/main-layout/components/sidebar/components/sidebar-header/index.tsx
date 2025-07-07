@@ -1,4 +1,5 @@
 import { COLORS } from '@common/consts'
+import { Typography } from '@components'
 import { PUBLIC_ROUTES } from '@config/app'
 import { Menu, Youtube } from 'lucide-react'
 import Link from 'next/link'
@@ -26,7 +27,7 @@ export const SidebarHeader: FC<IProps> = ({ toggleOpen }) => (
         color={COLORS.primary}
         size={28}
       />
-      <span className={styles.title}>Tube Platform</span>
+      <Typography.TITLE>Tube Platform</Typography.TITLE>
     </Link>
   </div>
 )

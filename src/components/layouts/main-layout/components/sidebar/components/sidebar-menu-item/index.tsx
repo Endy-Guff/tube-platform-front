@@ -1,3 +1,4 @@
+import { Typography } from '@components'
 import cn from 'clsx'
 import Link from 'next/link'
 import { FC } from 'react'
@@ -19,7 +20,7 @@ export const SidebarMenuItem: FC<ISidebarMenuItemProps> = props => {
         href={link}
       >
         {getIconOrImage(props)}
-        <span>{label}</span>
+        <Typography.TEXT>{label}</Typography.TEXT>
       </Link>
     </li>
   )

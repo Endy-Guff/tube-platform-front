@@ -9,6 +9,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FC } from 'react'
 
+import { Typography } from '../typography'
+
 import styles from './styles.module.scss'
 
 export const VideoCard: FC<IVideo> = ({
@@ -51,9 +53,15 @@ export const VideoCard: FC<IVideo> = ({
             color={COLORS.primary}
             size={12}
           />
-          <span className={styles['views-count']}>{getFormatViews(viewsCount)}</span>
+          <Typography.DESCRIPTION className={styles['views-count']}>
+            {getFormatViews(viewsCount)}
+          </Typography.DESCRIPTION>
         </div>
-        <div className={styles.date}>{getFormatRelativeDate(parseISO(createdAt))}</div>
+        <div className={styles.date}>
+          <Typography.DESCRIPTION>
+            {getFormatRelativeDate(parseISO(createdAt))}
+          </Typography.DESCRIPTION>
+        </div>
       </div>
 
       <div className={cn(styles.title, 'line-clamp-2')}>

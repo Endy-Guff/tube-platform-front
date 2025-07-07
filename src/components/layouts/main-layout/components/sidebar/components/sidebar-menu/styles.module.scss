@@ -27,12 +27,11 @@
 }
 
 .title {
-  font-size: 0.65rem;
   text-transform: uppercase;
-  opacity: 0;
+  opacity: 0 !important;
   transition: opacity 0.3s ease-in-out;
 
   &.isShow {
-    opacity: 0.45;
+    opacity: 0.45 !important;
   }
 }

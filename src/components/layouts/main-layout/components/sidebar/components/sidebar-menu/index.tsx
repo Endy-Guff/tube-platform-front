@@ -1,3 +1,4 @@
+import { Typography } from '@components'
 import cn from 'clsx'
 import { FC } from 'react'
 
@@ -22,7 +23,11 @@ export const SidebarMenu: FC<IProps> = ({ menu, isOpen, pathname, component: Com
       key={String(items)}
       className={cn(styles.nav, { [styles.border]: isBorderBottom })}
     >
-      {title && <span className={cn(styles.title, { [styles.isShow]: isOpen })}>{title}</span>}
+      {title && (
+        <Typography.DESCRIPTION className={cn(styles.title, { [styles.isShow]: isOpen })}>
+          {title}
+        </Typography.DESCRIPTION>
+      )}
       <ul className={styles.list}>
         {items.map((props: ISidebarMenuItem) => (
           <Component

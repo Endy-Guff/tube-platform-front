@@ -1,3 +1,4 @@
+import { Typography } from '@components'
 import { Dot, Radio } from 'lucide-react'
 import Link from 'next/link'
 import { FC } from 'react'
@@ -16,7 +17,7 @@ export const SidebarSubscriptionItem: FC<ISidebarMenuItemProps> = props => {
         {getIconOrImage(props)}
         {isOpen && (
           <span>
-            <span>{label}</span>
+            <Typography.TEXT>{label}</Typography.TEXT>
             {isLiveNow && <Radio />}
             {isRecentUpload && <Dot />}
           </span>
