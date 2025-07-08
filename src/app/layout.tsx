@@ -11,7 +11,10 @@ const suse = SUSE({
 })
 
 export const metadata: Metadata = {
-  title: 'Tube Platform',
+  title: {
+    absolute: 'Tube Platform',
+    template: '%s | Tube Platform'
+  },
   description: 'App for video watching'
 }
 
