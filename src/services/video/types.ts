@@ -1,7 +1,8 @@
 import { IChannel } from '../channel'
 
 export enum EVideoCategory {
-  EXPLORE = 'explore'
+  EXPLORE = 'explore',
+  TRENDING = 'trending'
 }
 
 export interface IVideo {

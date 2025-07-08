@@ -27,7 +27,7 @@ export const SidebarHeader: FC<IProps> = ({ toggleOpen }) => (
         color={COLORS.primary}
         size={28}
       />
-      <Typography.TITLE>Tube Platform</Typography.TITLE>
+      <Typography.TITLE1>Tube Platform</Typography.TITLE1>
     </Link>
   </div>
 )

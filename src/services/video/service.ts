@@ -4,12 +4,15 @@ import axios from 'axios'
 import { EVideoCategory, IVideo } from './types'
 
 class VideoService {
-  getVideosByCategory(category: EVideoCategory) {
-    console.log(process.env.NEXT_PUBLIC_SERVER_URL)
-
-    return axios.get<PaginationResponse<IVideo[], 'videos'>>(
-      `${process.env.NEXT_PUBLIC_SERVER_URL}/api/videos/${category}`
-    ) // todo: сделать axios конфиг
+  getVideosByCategory<WithPagination extends boolean = false>(
+    category: EVideoCategory,
+    config?: { withPagination?: WithPagination }
+  ) {
+    return axios.get<
+      WithPagination extends true ? PaginationResponse<IVideo[], 'videos'> : IVideo[]
+    >(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/videos/${category}`, {
+      params: config?.withPagination ? undefined : undefined
+    }) // todo: сделать axios конфиг
   }
 }
 
