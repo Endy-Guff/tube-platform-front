@@ -1,5 +1,6 @@
 export enum ETypography {
-  TITLE = 'TITLE',
+  TITLE1 = 'TITLE1',
+  TITLE2 = 'TITLE2',
   TEXT = 'TEXT',
   DESCRIPTION = 'DESCRIPTION'
 }
