@@ -1,7 +1,8 @@
-import { Typography, VideoCard } from '@components'
+import { CatergoryHeading, VideoCard } from '@components'
 import { PUBLIC_ROUTES } from '@config/app'
 import { EVideoCategory } from '@services'
 import { videoService } from '@services/video/service'
+import { Flame } from 'lucide-react'
 import { Metadata } from 'next'
 
 import { Explore } from './_components'
@@ -29,7 +30,7 @@ export default async function Home() {
   return (
     <section>
       <section>
-        <Typography.TITLE2>Trending</Typography.TITLE2>
+        <CatergoryHeading icon={Flame}>Trending</CatergoryHeading>
         <div
           style={{
             display: 'grid',

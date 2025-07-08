@@ -1,14 +1,15 @@
 'use client'
 
-import { Typography, VideoCard } from '@components/ui'
+import { CatergoryHeading, VideoCard } from '@components'
 import { EVideoCategory, useGetVideoByCategory } from '@services'
+import { Compass } from 'lucide-react'
 
 export const Explore = () => {
   const { data } = useGetVideoByCategory(EVideoCategory.EXPLORE, { withPagination: true })
 
   return (
     <section>
-      <Typography.TITLE2>Explore</Typography.TITLE2>
+      <CatergoryHeading icon={Compass}>Explore</CatergoryHeading>
       <div
         style={{
           display: 'grid',
