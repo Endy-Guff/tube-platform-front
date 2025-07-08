@@ -1,19 +1,11 @@
-.menu,
 .list {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.menu {
-  gap: 3rem;
-}
-
 .nav {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
 
   &.border::after {
     position: absolute;

@@ -1,4 +1,4 @@
-import { Typography } from '@components'
+import { Box, Typography } from '@components'
 import cn from 'clsx'
 import { FC } from 'react'
 
@@ -19,9 +19,12 @@ interface IProps {
 
 export const SidebarMenu: FC<IProps> = ({ menu, isOpen, pathname, component: Component }) => {
   const menuGroupRender = ({ items, title, isBorderBottom }: ISidebarMenuGroup) => (
-    <nav
+    <Box
+      as='nav'
       key={String(items)}
       className={cn(styles.nav, { [styles.border]: isBorderBottom })}
+      direction='column'
+      gap='1rem'
     >
       {title && (
         <Typography.DESCRIPTION className={cn(styles.title, { [styles.isShow]: isOpen })}>
@@ -38,12 +41,15 @@ export const SidebarMenu: FC<IProps> = ({ menu, isOpen, pathname, component: Com
           />
         ))}
       </ul>
-    </nav>
+    </Box>
   )
 
   return (
-    <div className={styles.menu}>
+    <Box
+      direction='column'
+      gap='3rem'
+    >
       {Array.isArray(menu) ? menu.map(menuGroupRender) : menuGroupRender(menu)}
-    </div>
+    </Box>
   )
 }

@@ -12,12 +12,6 @@
   animation: hideSidebar 0.3s ease-in-out forwards;
 }
 
-.menu {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
 @keyframes hideSidebar {
   0% {
     width: var(--sidebar-width);

@@ -9,6 +9,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FC } from 'react'
 
+import { Box } from '../box'
 import { Typography } from '../typography'
 
 import styles from './styles.module.scss'
@@ -47,8 +48,12 @@ export const VideoCard: FC<IVideo> = ({
         </Link>
       </div>
 
-      <div className={styles.info}>
-        <div className={styles.views}>
+      <Box
+        className={styles.info}
+        alignItems='center'
+        justifyContent='space-between'
+      >
+        <Box alignItems='center'>
           <User
             color={COLORS.primary}
             size={12}
@@ -56,13 +61,13 @@ export const VideoCard: FC<IVideo> = ({
           <Typography.DESCRIPTION className={styles['views-count']}>
             {getFormatViews(viewsCount)}
           </Typography.DESCRIPTION>
-        </div>
+        </Box>
         <div className={styles.date}>
           <Typography.DESCRIPTION>
             {getFormatRelativeDate(parseISO(createdAt))}
           </Typography.DESCRIPTION>
         </div>
-      </div>
+      </Box>
 
       <div className={cn(styles.title, 'line-clamp-2')}>
         <Link href={PUBLIC_ROUTES.VIDEO(publicId)}>{title}</Link>

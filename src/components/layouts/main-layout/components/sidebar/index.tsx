@@ -1,6 +1,7 @@
 'use client'
 
 import { useToggle } from '@common/hooks'
+import { Box } from '@components'
 import cn from 'clsx'
 import { usePathname } from 'next/navigation'
 
@@ -20,7 +21,10 @@ export const Sidebar = () => {
   return (
     <aside className={cn(styles.sidebar, { [styles.open]: isOpen })}>
       <SidebarHeader toggleOpen={toggleOpen} />
-      <div className={styles.menu}>
+      <Box
+        direction='column'
+        gap='1.5rem'
+      >
         <SidebarMenu
           menu={SIDEBAR_MENU}
           component={SidebarMenuItem}
@@ -41,7 +45,7 @@ export const Sidebar = () => {
           isOpen={isOpen}
           pathname={pathname}
         />
-      </div>
+      </Box>
     </aside>
   )
 }

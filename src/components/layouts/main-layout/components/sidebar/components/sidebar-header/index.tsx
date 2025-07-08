@@ -1,5 +1,5 @@
 import { COLORS } from '@common/consts'
-import { Typography } from '@components'
+import { Box, Typography } from '@components'
 import { PUBLIC_ROUTES } from '@config/app'
 import { Menu, Youtube } from 'lucide-react'
 import Link from 'next/link'
@@ -12,7 +12,11 @@ interface IProps {
 }
 
 export const SidebarHeader: FC<IProps> = ({ toggleOpen }) => (
-  <div className={styles.header}>
+  <Box
+    className={styles.header}
+    alignItems='center'
+    gap='1.5rem'
+  >
     <button
       className={styles.button}
       onClick={toggleOpen}
@@ -29,5 +33,5 @@ export const SidebarHeader: FC<IProps> = ({ toggleOpen }) => (
       />
       <Typography.TITLE1>Tube Platform</Typography.TITLE1>
     </Link>
-  </div>
+  </Box>
 )
