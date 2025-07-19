@@ -5,29 +5,13 @@
   overflow: hidden;
   white-space: nowrap;
 
-  &.open {
-    animation: showSidebar 0.3s ease-in-out forwards;
-  }
+  transition: width 0.3s ease-in-out;
 
-  animation: hideSidebar 0.3s ease-in-out forwards;
-}
-
-@keyframes hideSidebar {
-  0% {
+  &.show {
     width: var(--sidebar-width);
   }
 
-  100% {
+  &.hide {
     width: 4.5rem;
-  }
-}
-
-@keyframes showSidebar {
-  0% {
-    width: 4.5rem;
-  }
-
-  100% {
-    width: var(--sidebar-width);
   }
 }

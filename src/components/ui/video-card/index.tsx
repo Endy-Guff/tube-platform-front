@@ -1,4 +1,4 @@
-import { COLORS } from '@common/consts'
+import { COLORS, VIDEO_CARD_SIZES } from '@common/consts'
 import { getFormatRelativeDate, getFormatViews } from '@common/tools'
 import { PUBLIC_ROUTES } from '@config'
 import { IVideo } from '@services'
@@ -30,8 +30,8 @@ export const VideoCard: FC<IVideo> = ({
             className={styles['preview-img']}
             src={thumbnailUrl}
             alt={title}
-            width={250}
-            height={140}
+            width={VIDEO_CARD_SIZES.width}
+            height={VIDEO_CARD_SIZES.height}
           />
         </Link>
         <Link

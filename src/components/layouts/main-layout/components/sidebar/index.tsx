@@ -19,7 +19,7 @@ export const Sidebar = () => {
   const [isOpen, toggleOpen] = useToggle(true)
 
   return (
-    <aside className={cn(styles.sidebar, { [styles.open]: isOpen })}>
+    <aside className={cn(styles.sidebar, { [styles.show]: isOpen, [styles.hide]: !isOpen })}>
       <SidebarHeader toggleOpen={toggleOpen} />
       <Box
         direction='column'
