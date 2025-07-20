@@ -27,7 +27,7 @@ const ExploreComponent = () => {
               style={{ height: VIDEO_CARD_SIZES.height }}
             />
           ) : (
-            data?.data?.videos.map(props => (
+            data?.videos.map(props => (
               <VideoCard
                 key={props.id}
                 {...props}

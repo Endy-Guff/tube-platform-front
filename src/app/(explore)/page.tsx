@@ -32,7 +32,7 @@ export default async function Home() {
       <div>
         <CatergoryHeading icon={Flame}>Trending</CatergoryHeading>
         <VideoGridLayout>
-          {data?.data?.map(props => (
+          {data?.map(props => (
             <VideoCard
               key={props.id}
               {...props}

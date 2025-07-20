@@ -28,8 +28,8 @@ export const VideosComponent: FC<IVideosProps> = ({ search }) => {
           style={{ height: VIDEO_CARD_SIZES.height }}
         />
       )}
-      {!isLoading && data?.data?.videos.length ? (
-        data?.data?.videos.map(props => (
+      {!isLoading && data?.videos.length ? (
+        data?.videos.map(props => (
           <VideoCard
             key={props.id}
             {...props}
