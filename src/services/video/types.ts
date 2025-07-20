@@ -2,7 +2,8 @@ import { IChannel } from '../channel'
 
 export enum EVideoCategory {
   EXPLORE = 'explore',
-  TRENDING = 'trending'
+  TRENDING = 'trending',
+  GAMES = 'games'
 }
 
 export interface IGetVideoRequest {
