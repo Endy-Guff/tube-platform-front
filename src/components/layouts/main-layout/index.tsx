@@ -11,9 +11,9 @@ export const MainLayout: FC<PropsWithChildren> = ({ children }) => (
     className={styles.main}
   >
     <Sidebar />
-    <div className={styles['content_wrapper']}>
+    <Box className={styles['content_wrapper']} direction='column'>
       <Header />
       <section className={styles.content}>{children}</section>
-    </div>
+    </Box>
   </Box>
 )
