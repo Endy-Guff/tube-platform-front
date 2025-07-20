@@ -1,0 +1,1 @@
+export const MIN_COLUMN_GRID_WIDTH = 250

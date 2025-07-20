@@ -1,4 +1,4 @@
-import { PUBLIC_ROUTES } from '@config'
+import { PRIVATE_ROUTES, PUBLIC_ROUTES } from '@config'
 import {
   CircleAlert,
   CirclePlay,
@@ -65,7 +65,7 @@ export const SIDEBAR_MENU_MORE: ISidebarMenuGroup = {
   items: [
     {
       label: 'Settings',
-      link: PUBLIC_ROUTES.SETTINGS,
+      link: PRIVATE_ROUTES.SETTINGS,
       icon: { icon: Settings }
     },
     {

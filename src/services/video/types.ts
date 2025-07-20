@@ -5,6 +5,11 @@ export enum EVideoCategory {
   TRENDING = 'trending'
 }
 
+export interface IGetVideoRequest {
+  category?: EVideoCategory
+  search?: string
+}
+
 export interface IVideo {
   id: string
   publicId: string

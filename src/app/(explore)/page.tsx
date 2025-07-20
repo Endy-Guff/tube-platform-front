@@ -1,4 +1,4 @@
-import { CatergoryHeading, VideoCard } from '@components'
+import { CatergoryHeading, VideoCard, VideoGridLayout } from '@components'
 import { PUBLIC_ROUTES } from '@config/app'
 import { EVideoCategory } from '@services'
 import { videoService } from '@services/video/service'
@@ -25,28 +25,21 @@ export const metadata: Metadata = {
 }
 
 export default async function Home() {
-  const data = await videoService.getVideosByCategory(EVideoCategory.TRENDING)
+  const data = await videoService.getVideos({ category: EVideoCategory.TRENDING })
 
   return (
     <section>
-      <section>
+      <div>
         <CatergoryHeading icon={Flame}>Trending</CatergoryHeading>
-        <div
-          style={{
-            display: 'grid',
-            columnGap: '1rem',
-            rowGap: '1.5rem',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))'
-          }}
-        >
+        <VideoGridLayout>
           {data?.data?.map(props => (
             <VideoCard
               key={props.id}
               {...props}
             />
           ))}
-        </div>
-      </section>
+        </VideoGridLayout>
+      </div>
       <Explore />
     </section>
   )

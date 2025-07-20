@@ -1,33 +1,26 @@
 'use client'
 
-import { VIDEO_CARD_SIZES } from '@common/consts'
+import { MIN_COLUMN_GRID_WIDTH, VIDEO_CARD_SIZES } from '@common/consts'
 import { useGridColumns } from '@common/hooks'
-import { CatergoryHeading, SkeletonLoader, VideoCard } from '@components'
-import { EVideoCategory, useGetVideoByCategory } from '@services'
+import { CatergoryHeading, SkeletonLoader, VideoCard, VideoGridLayout } from '@components'
+import { EVideoCategory, useGetVideos } from '@services'
 import { Compass } from 'lucide-react'
 import dynamic from 'next/dynamic'
 
-const MIN_COLUMN_WIDTH = 250
-
 const ExploreComponent = () => {
-  const { columns, gridRef } = useGridColumns(MIN_COLUMN_WIDTH, '1.5rem')
-  const { data, isLoading } = useGetVideoByCategory(EVideoCategory.EXPLORE, {
-    withPagination: true
-  })
+  const { columns, gridRef } = useGridColumns(MIN_COLUMN_GRID_WIDTH, '1.5rem')
+  const { data, isLoading } = useGetVideos(
+    { category: EVideoCategory.EXPLORE },
+    {
+      withPagination: true
+    }
+  )
 
   return (
     <section>
       <CatergoryHeading icon={Compass}>Explore</CatergoryHeading>
       {
-        <div
-          ref={gridRef}
-          style={{
-            display: 'grid',
-            columnGap: '1rem',
-            rowGap: '1.5rem',
-            gridTemplateColumns: `repeat(auto-fill, minmax(${MIN_COLUMN_WIDTH}px, 1fr))`
-          }}
-        >
+        <VideoGridLayout ref={gridRef}>
           {isLoading ? (
             <SkeletonLoader
               count={columns}
@@ -41,7 +34,7 @@ const ExploreComponent = () => {
               />
             ))
           )}
-        </div>
+        </VideoGridLayout>
       }
     </section>
   )

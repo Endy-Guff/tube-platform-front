@@ -6,10 +6,9 @@ export const PUBLIC_ROUTES = {
   SUBSCRIPTIONS: '/subscriptions',
   HISTORY: '/history',
   LIKED_VIDEOS: '/liked-videos',
-  SETTINGS: '/settings',
   FEEDBACK: '/feedback',
-  SEARCH: '/search',
 
+  SEARCH: (search: string) => `/search?search=${search}`,
   VIDEO: (path: string) => `/v/${path}`,
   CHANNEL: (path: string) => `/c/${path}`
 

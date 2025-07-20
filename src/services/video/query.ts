@@ -2,13 +2,13 @@ import { useQuery } from '@tanstack/react-query'
 
 import { EQueryKeys } from './query-keys'
 import { videoService } from './service'
-import { EVideoCategory } from './types'
+import { IGetVideoRequest } from './types'
 
-export const useGetVideoByCategory = <WithPagination extends boolean = false>(
-  category: EVideoCategory,
+export const useGetVideos = <WithPagination extends boolean = false>(
+  params: IGetVideoRequest,
   config?: { withPagination?: WithPagination }
 ) =>
   useQuery({
-    queryKey: [EQueryKeys.GET_VIDEO_BY_CATEGORY, category],
-    queryFn: () => videoService.getVideosByCategory(category, config)
+    queryKey: [EQueryKeys.GET_VIDEO_BY_CATEGORY, ...Object.values(params)],
+    queryFn: () => videoService.getVideos(params, config)
   })
