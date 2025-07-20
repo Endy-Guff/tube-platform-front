@@ -5,4 +5,4 @@ const options: CreateAxiosDefaults = {
 }
 
 export const axiosInstanse = axios.create(options)
-axiosInstanse.interceptors.response.use((response) => response.data)
+axiosInstanse.interceptors.response.use(response => response.data)
